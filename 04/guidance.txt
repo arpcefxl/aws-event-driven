@@ -1,0 +1,7 @@
+Create an SSM Parameter named the ID of the VPC in question
+The data value is the Security Group ID to add to each new instance
+
+Create a Lambda function with the attached Python code
+
+Create an EventBridge rule to capture all EC2 state changes for "pending"
+Use the newly created Lambda function as the target

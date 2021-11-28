@@ -1,0 +1,6 @@
+Navigate to the CloudWatch Log group that contains CloudTrail logs
+Click on Actions, then Create Metric Filter
+Enter the following text:
+{ ($.eventName = "ChangePassword") }
+Click Next and enter the filter name and metric details
+
