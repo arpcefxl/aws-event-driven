@@ -1,0 +1,14 @@
+Navigate to the CloudWatch dashboard, in Metrics->All Metrics
+Search for StatusCheckFailed_System metrics
+Verify that at least one exists, then check to All Alarms, then Create Alarm
+Paste in StatusCheckFailed_System and select the desired instance
+Change the threshold to >= 1
+Under Additional Configuration, you may want to increase the time the instance must be unavailable
+Change "1 out of 1" to 4 out of 4 or higher, where each increment is 5 extra minutes
+Click Next
+
+Scroll down to EC2 action and select the "Recover this instance" radio button
+Note that some instance types do not qualify for Instance Recovery
+Optionally you can choose to either configure notification or remove it entirely
+
+Click on "Create alarm"
