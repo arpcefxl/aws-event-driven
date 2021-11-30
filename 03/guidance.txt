@@ -1,0 +1,4 @@
+Create an IAM policy with the attached json document
+Create a lambda function with the attached code.
+
+Create an EventBridge rule that is scheduled daily with the new Lambda function as a target
