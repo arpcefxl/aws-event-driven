@@ -1,0 +1,6 @@
+In the AWS Console, 
+Create an EventBridge rule in a single region to forward all events to the designated consolidation region
+
+That is a time-consuming activity, and much easier handled via automation
+Use the attached bash shell script with a list of regions to create rules in all other regions
+
