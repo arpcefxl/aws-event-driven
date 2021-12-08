@@ -1,0 +1,38 @@
+SNS Service
+
+Configure an SNS topic to receive alerts (no subscribers needed)
+
+------------------------------------------------------------------------------------------------------
+EventBridge Service
+
+Configure an EventBridge rule which captures high severity GuardDuty findings with the following JSON:
+(do this in your primary region if you have all other regions forwarding events)
+
+{
+  "source": ["aws.guardduty"],
+  "detail-type": ["GuardDuty Finding"],
+  "detail": {
+    "severity": [7.0,7.1,7.2,7.3,7.4,7.5,7.6,7.7,7.8,7.9,8.0,8.1,8.2,8.3,8.4,8.5,8.6,8.7,8.8,8.9,7,8]
+  }
+}
+
+For the rule, select your SNS topic as the target
+
+------------------------------------------------------------------------------------------------------
+Chatbot service
+
+Log in to a web browser using your Slack identity (this will be used by Chatbot)
+Navigate to the Chatbot console in the same region as your event consolidation
+Click on Configure New Client and select Slack
+Select Allow for permissions
+
+On the following page, click on Configure New Channel
+Enter a descriptive name for the channel
+Select the channel type (mine are Public, so I used that)
+Select the channel name from the drop down list
+Leave the Channel IAM role radio button selected
+Make sure that Create an IAM role using a template is selected and enter a new role name
+Leave Policy Templates with the default value
+In Channel guardrails, Select AWSChatbotServiceLinkedRolePolicy
+In the bottom drop down menus, select the SNS topic region and the topic itself
+click Configure
