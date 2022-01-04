@@ -1,0 +1,26 @@
+Log into the AWS Organizations Management Account
+Navigate to the WAF and Shield dashboard
+Select AWS Firewall Manager
+In the Enable Wizard, paste in the 12-digit account id for the Firewall Manager account
+Wait for a couple minutes for enabling to complete
+
+Log into the AWS Firewall Manager account
+Navigate to the WAF and Shield dashboard
+Select AWS Firewall Manager
+Click on Security Policies and select Create Policy
+Select Security Group
+Select Auditing and enforcement of security group rules
+Select Global for Region
+Enter a policy name
+Select onfigure managed audit policy rules
+Select Inbound Rules
+Select Audit overly permissive security group rules
+Select Deny rules with the allow 'ALL' protocol
+Select Auto remediate any noncompliant resources.
+Click on Next
+Select Include all accounts under my AWS organization
+Select Security group
+Select Include all resources that match the selected resource type
+Click on Next
+Click on Next
+Click on Create Policy
