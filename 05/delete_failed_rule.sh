@@ -24,6 +24,7 @@ REGIONS=`aws ec2 describe-regions --output text --query Regions[].RegionName |tr
 for i in $REGIONS; do
 if [[ $i != $CENTRALREGION ]]; then
   echo "Deleting rule in region $i"
+  aws --profile $PROFILE events --region $i remove-targets --rule "EventConsolidation" --id 1
   aws --profile $PROFILE events --region $i delete-rule --name "EventConsolidation" 
 fi
 done
