@@ -20,7 +20,7 @@ EVENTBUSARN="arn:aws:events:${CENTRALREGION}:${ACCTID}:event-bus/default"
 
 #Create the EventBridge rule which forwards all events to the central region using the newly created IAM role
 
-REGIONS=`aws ec2 describe-regions --query Regions[].RegionName |tr -s '\t' '\n' --output text`
+REGIONS=`aws ec2 describe-regions --output text --query Regions[].RegionName |tr -s '\t' '\n'`
 for i in $REGIONS; do
 if [[ $i != $CENTRALREGION ]]; then
   echo "Deleting rule in region $i"
