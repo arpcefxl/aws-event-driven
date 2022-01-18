@@ -10,7 +10,7 @@ Select AWS Firewall Manager
 Click on Security Policies and select Create Policy
 Select Security Group
 Select Auditing and enforcement of security group rules
-Select Global for Region
+Select a Region
 Enter a policy name
 Select onfigure managed audit policy rules
 Select Inbound Rules
